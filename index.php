@@ -115,8 +115,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <title>CalcBacteria</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 </head>
-<body style="font-family: 'Inter', sans-serif;background: url('https://images.pexels.com/photos/192136/pexels-photo-192136.jpeg?cs=srgb&dl=pexels-oleksandr-tiupa-192136.jpg&fm=jpg');background-size: cover;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);">
+<body style="font-family: 'Inter', sans-serif;background: url('/assets/img/bg.jpg');background-size: cover;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);">
     <div class="flex min-h-full h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md m-auto space-y-2">
             <?php if(isset($errors)): ?>
