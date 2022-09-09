@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = $_POST['phone'];
     if(!isset($phone)) $errors['phone'] = 'Вы не указали номер телефона';
     preg_match('~^(\+[0-9]{12})$~', $phone, $matches);
-    if(empty($matches)) $errors['phone'] = 'Номер должен начинаться с + и количество чисел должно ровняться 12-и';
+    if(empty($matches)) $errors['phone'] = 'Номер должен начинаться с + и количество чисел должно ровняться 12-ти';
 
     // Проверка на валидность введенного адреса электронной почты
     $email = $_POST['email'];
@@ -116,10 +116,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <title>CalcBacteria</title>
 </head>
-<body style="font-family: 'Inter', sans-serif;background: url('https://images.pexels.com/photos/192136/pexels-photo-192136.jpeg?cs=srgb&dl=pexels-oleksandr-tiupa-192136.jpg&fm=jpg');background-size: cover;backdrop-filter: blur(10px);">
+<body style="font-family: 'Inter', sans-serif;background: url('https://images.pexels.com/photos/192136/pexels-photo-192136.jpeg?cs=srgb&dl=pexels-oleksandr-tiupa-192136.jpg&fm=jpg');background-size: cover;backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);">
     <div class="flex min-h-full h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md m-auto space-y-2">
-            <?php if(isset($result)): ?>
+            <?php if(isset($errors)): ?>
                 <?php foreach($errors as $error): ?>
                     <div class="rounded-2xl text-white text-sm shadow-md py-2 px-3" style="background-color:rgba(220, 38, 38, 0.5);">
                         <?=$error?>
@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="rounded-2xl shadow-lg p-5" style="background-color:rgba(0, 0, 0, 0.5);">
                     <div class="text-center">
                         <h2 class="text-2xl text-green-500 font-bold">CalcBacteria</h2>
-                        <p class="text-gray-200 text-sm">Укажите необходимые данные, чтобы начать</p>
+                        <p class="text-gray-200 text-sm">Укажите необходимые данные, чтобы начать.</p>
                     </div>
                     <hr style="border: none; height: 2px;" class="my-5 text-green-900 rounded-lg bg-green-900">
                     <form method="POST" class="text-center">
